@@ -1,0 +1,36 @@
+/* ================== Section Клиенты =============== */
+.client-title {
+  margin-bottom: 50px;
+  text-align: center;
+}
+.client-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin-left: calc(-1 * var(--gap));
+  margin-top: calc(-1 * var(--gap));
+}
+.client-item {
+  margin-left: var(--gap);
+  margin-top: var(--gap);
+  flex-basis: calc(100% / 6 - var(--gap));
+}
+.client-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 170px;
+  height: 92px;
+  border: 1px solid var(--client-color);
+  border-radius: 4px;
+  fill: var(--client-color);
+  transition: border var(--btn-timing) cubic-bezier(0.4, 0, 0.2, 1),
+    fill var(--btn-timing) cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:hover,
+  &:focus {
+    border: 1px solid var(--accent-color);
+    fill: var(--accent-color);
+  }
+}

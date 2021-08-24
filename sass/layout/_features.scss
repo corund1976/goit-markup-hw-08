@@ -1,0 +1,39 @@
+/* ================ Section Преимущества ================ */
+/* Убираю верхний падинг, который отсутствует только в этой секции */
+.feature {
+  padding-bottom: 0;
+}
+/* Карточка Преимущества */
+.feature-title {
+  font-size: 14px;
+  line-height: 1.17;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.feature-text {
+  font-size: 14px;
+  line-height: 1.71;
+  letter-spacing: 0.03em;
+}
+/* Расставляем Feature карточки по сетке и задаем ширину */
+.feature-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: calc(-1 * var(--gap));
+  margin-top: calc(-1 * var(--gap));
+}
+.feature-item {
+  margin-left: var(--gap);
+  margin-top: var(--gap);
+  flex-basis: calc(100% / 4 - var(--gap));
+}
+.feature-icon {
+  margin-bottom: var(--gap);
+  background-color: var(--feature-icon-bg-color);
+  height: 120px;
+  /* выравниваем иконку по центру */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

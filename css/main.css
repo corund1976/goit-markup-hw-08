@@ -1,0 +1,929 @@
+@charset "UTF-8";
+:root {
+  /* Палитра цветов */
+  /* цвет текст*/
+  --primary-text-color: #757575;
+  --alt-text-color: #212121;
+  --hero-text-color: #ffffff;
+  /* цвет лого */
+  --logo-header-color: #000000;
+  --logo-footer-color: #ffffff;
+  /* цвет акцент */
+  --accent-color: #2196f3;
+  --accent-color-hover-hero-button: #188ce8;
+  /* цвет кнопка */
+  --active-button-text-color: #ffffff;
+  --passive-button-bg-color: #f5f4fa;
+  /* цвет фон */
+  --primary-bg-color: #ffffff;
+  --hero-bg-color: #2f303a;
+  --team-bg-color: #f5f4fa;
+  --feature-icon-bg-color: #f5f4fa;
+  --footer-bg-color: #2f303a;
+  /* цвет рамка */
+  --header-border-color: #ececec;
+  --portfolio-card-border-color: #eeeeee;
+  /* цвет элемента "клиенты" */
+  --client-color: #afb1b8;
+  /* Расстояние между элементами в сетке */
+  --gap: 30px;
+  /* Задержки анимации */
+  --btn-timing: 250ms;
+  --modal-timing: 500ms;
+}
+
+body {
+  background-color: var(--primary-bg-color);
+  color: var(--primary-text-color);
+  font-family: "Roboto", sans-serif;
+  letter-spacing: 0.03em;
+}
+
+/* ================== Visually Hidden ================ */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  -webkit-clip-path: inset(100%);
+          clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+/* =============== End of Visually Hidden ============= */
+/* ========== Сброс от Преподавателя ======== */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+ul,
+ol {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.list {
+  list-style: none;
+}
+
+.link {
+  text-decoration: none;
+}
+
+/* ======== Конец Сброс от Преподавателя ====== */
+.container {
+  width: 1200px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin: 0 auto;
+}
+
+.section {
+  padding-top: 94px;
+  padding-bottom: 94px;
+}
+
+/* Logo */
+.logo {
+  font-family: Raleway;
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 1.17;
+  color: var(--logo-header-color);
+}
+
+.accent {
+  color: var(--accent-color);
+}
+
+.button {
+  cursor: pointer;
+  border-radius: 4px;
+  border-width: 0;
+  text-align: center;
+}
+
+.title {
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.17;
+  color: var(--alt-text-color);
+}
+
+/* Backdrop задний фон для Модального окна*/
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6);
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transition: opacity var(--modal-timing) linear, visibility var(--modal-timing) linear;
+}
+
+.backdrop.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+/* Модальное окно для кнопки "Заказать услугу" */
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 528px;
+  height: 581px;
+  padding: 40px;
+  background-color: var(--primary-bg-color);
+  border-radius: 4px;
+}
+
+/* Кнопка Х закрытия модального окна */
+.close-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 30px;
+  height: 30px;
+  /* круглая рамка вокруг Х */
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  background-color: transparent;
+  padding: 0;
+  /* центруем Х в круглой рамке */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.close-btn:hover .close-btn-icon, .close-btn:focus .close-btn-icon {
+  fill: var(--accent-color);
+}
+
+/* Делаем плавный ховер при наведении на кнопку закрытия */
+.close-btn-icon {
+  transition: fill var(--btn-timing) cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Форма для заполнения Модалки */
+.modal-form {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Заголовок модалки */
+.modal-form-head {
+  text-align: center;
+  font-weight: 700;
+  line-height: 1.17;
+  font-size: 20px;
+  margin-bottom: 12px;
+}
+
+/* Расстояние между окнами "полями" ввода */
+.modal-form-field {
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.01em;
+  margin-bottom: 10px;
+}
+
+.modal-form-input-wrapper {
+  position: relative;
+  display: block;
+  margin-top: 4px;
+}
+
+/* Поля "Имя" "Телефон" "Email" */
+.modal-form-input {
+  width: 100%;
+  height: 40px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  padding-left: 40px;
+}
+.modal-form-input:focus {
+  outline: none;
+  border-color: var(--accent-color);
+}
+.modal-form-input:focus + .modal-form-icon {
+  fill: var(--accent-color);
+}
+
+/* Иконки на поля "Имя" "Телефон" "Email" */
+.modal-form-icon {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translate(50%, -50%);
+  transition: fill var(--btn-timing) cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Поле "Комментарий" */
+.modal-form-message {
+  width: 100%;
+  height: 120px;
+  margin-top: 4px;
+  resize: none;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  padding: 12px 16px;
+  transition: border-color var(--btn-timing) cubic-bezier(0.4, 0, 0.2, 1);
+}
+.modal-form-message:focus {
+  outline: none;
+  border-color: var(--accent-color);
+}
+.modal-form-message::-moz-placeholder {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.01em;
+  color: rgba(117, 117, 117, 0.5);
+}
+.modal-form-message:-ms-input-placeholder {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.01em;
+  color: rgba(117, 117, 117, 0.5);
+}
+.modal-form-message::placeholder {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.01em;
+  color: rgba(117, 117, 117, 0.5);
+}
+
+/* Кнопка в модалке "Отправить" */
+.modal-form-button {
+  align-self: center;
+  padding: 10px 55px;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.88;
+  letter-spacing: 0.06em;
+  color: var(--active-button-text-color);
+  border-radius: 4px;
+  background-color: var(--accent-color);
+  cursor: pointer;
+  transition: background-color var(--btn-timing) cubic-bezier(0.4, 0, 0.2, 1), box-shadow var(--btn-timing) cubic-bezier(0.4, 0, 0.2, 1);
+}
+.modal-form-button:focus {
+  box-shadow: 0px 4px 4px 0px #00000026;
+  background-color: var(--accent-color-hover-hero-button);
+}
+
+.modal-form-checkbox-label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  margin-bottom: 30px;
+  /* Кастомный чекбокс */
+  /* Убираем рамку чекбокса от браузера по умолчанию и рисуем
+  свой чекбокс, который уже сразу с фоном и новой рамкой */
+}
+.modal-form-checkbox-label::before {
+  content: "";
+  display: block;
+  width: 15px;
+  height: 15px;
+  border: 1px solid var(--primary-text-color);
+  cursor: pointer;
+  margin-right: 10px;
+}
+.modal-form-checkbox:checked + .modal-form-checkbox-label::before {
+  background-image: url(../images/icon_check.svg);
+  border: none;
+  /* Всегда ставить при Фоновом изображении сл.3 св-ва */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.modal-form-checkbox-link {
+  color: var(--accent-color);
+}
+
+.footer-social-list {
+  display: flex;
+  justify-content: space-between;
+  width: 206px;
+}
+
+.footer-social-icon {
+  fill: var(--active-button-text-color);
+}
+
+.footer-social-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.1);
+  transition: background-color var(--btn-timing) cubic-bezier(0.4, 0, 0.2, 1);
+}
+.footer-social-link:hover, .footer-social-link:focus {
+  background-color: var(--accent-color);
+}
+
+/* ================= Header ================ */
+/* рисуем нижнюю границу Header */
+.header {
+  border-bottom: 1px solid var(--header-border-color);
+}
+
+/* выстраиваем в ряд "Nav" навигацию (лого+нав) и "contacts" контакты в шапке */
+.header .container {
+  display: flex;
+  align-items: center;
+}
+
+/* выстраиваем в ряд "Logo" лого и "navigation" меню навигации */
+.nav {
+  display: flex;
+  align-items: center;
+}
+
+/* выстраиваем в ряд элементы "navigation" меню навигации: "Студия", "Портфолио" и "Контакты" */
+.navigation {
+  display: flex;
+  align-items: center;
+}
+
+/* отодвигаем от "Logo" лого вправо "navigation" меню навигации */
+.logo {
+  margin-right: 93px;
+}
+
+/* раздвигаем элементы "navigation" меню навигации */
+.navigation-item:not(:last-child) {
+  margin-right: 50px;
+}
+
+.contacts {
+  /* выстраиваем в ряд элементы "contacts" контакты email и phone*/
+  display: flex;
+  /* отодвигаем контакты "contacts" впрово */
+  margin-left: auto;
+}
+
+/* раздвигаем элементы контакты "contacts" */
+.contacts-item:not(:last-child) {
+  margin-right: 30px;
+}
+
+/* Header Navigation */
+.navigation .link {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.17;
+  letter-spacing: 0.02em;
+  color: var(--alt-text-color);
+  display: block;
+  padding-top: 32px;
+  padding-bottom: 32px;
+  position: relative;
+  transition: color var(--btn-timing) cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.navigation .link:hover,
+.navigation .link:focus {
+  color: var(--accent-color);
+}
+
+/* Текущая страница в панели навигации выделена цветом */
+.navigation .link.current {
+  color: var(--accent-color);
+}
+
+/* Подчёркивание ссылки текущей страницы */
+.navigation .link.current::after {
+  content: "";
+  display: block;
+  width: 100%;
+  position: absolute;
+  bottom: -1px;
+  height: 4px;
+  background-color: var(--accent-color);
+}
+
+/* Header Contacts */
+.contacts-link {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.17;
+  letter-spacing: 0.02em;
+  color: var(--primary-text-color);
+  /* Расставляем в ряд иконки с текстом внутри блоков "contacts" и
+     выравниваем по высоте */
+  display: flex;
+  align-items: center;
+  transition: color var(--btn-timing) cubic-bezier(0.4, 0, 0.2, 1);
+}
+.contacts-link:hover, .contacts-link:focus {
+  color: var(--accent-color);
+}
+
+/* отступ иконки от текста внутри блоков "contacts" и 
+   красим иконку в цвет текста*/
+.contacts-icon {
+  margin-right: 10px;
+  fill: currentColor;
+}
+
+/* ================ Section Hero =============== */
+.hero {
+  background-color: var(--hero-bg-color);
+  padding: 200px 0;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1600px;
+  background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../images/hero.jpg);
+  background-position: center;
+}
+
+.hero-title {
+  font-weight: 900;
+  font-size: 44px;
+  line-height: 1.36;
+  letter-spacing: 0.06em;
+  color: var(--hero-text-color);
+  text-transform: uppercase;
+  max-width: 696px;
+  margin: 0 auto 30px;
+}
+
+/* Hero Button */
+.hero-button {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.88;
+  letter-spacing: 0.06em;
+  background-color: var(--accent-color);
+  color: var(--active-button-text-color);
+  /* геометрия кнопки HERO */
+  padding: 10px 32px;
+  /* защита от прижимания к границам при переполнении */
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  transition: color var(--btn-timing) cubic-bezier(0.4, 0, 0.2, 1), background-color var(--btn-timing) cubic-bezier(0.4, 0, 0.2, 1);
+}
+.hero-button:hover, .hero-button:focus {
+  background-color: var(--accent-color-hover-hero-button);
+}
+
+/* ================= Section Opportunity ================ */
+.opportunity-title {
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+/* Расставляяем Opportunity карточки по сетке и задаем размер */
+.opportunity-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: calc(-1 * var(--gap));
+  margin-top: calc(-1 * var(--gap));
+}
+
+.opportunity-item {
+  margin-left: var(--gap);
+  margin-top: var(--gap);
+  flex-basis: calc(100% / 3 - var(--gap));
+}
+
+/* .section-opportunity .list-item:not(:last-child) {
+  margin-right: 30px;
+} */
+/* Overlay на карточки Opportunity */
+.opportunity-item-overlay {
+  font-size: 14px;
+  /* font-weight: 700; */
+  line-height: 1.17;
+  color: var(--hero-text-color);
+  background-color: rgba(47, 48, 58, 0.8);
+  text-transform: uppercase;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  overflow: auto;
+}
+
+.opportunity-item-wrapper {
+  position: relative;
+}
+
+/* ================ Section Преимущества ================ */
+/* Убираю верхний падинг, который отсутствует только в этой секции */
+.feature {
+  padding-bottom: 0;
+}
+
+/* Карточка Преимущества */
+.feature-title {
+  font-size: 14px;
+  line-height: 1.17;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.feature-text {
+  font-size: 14px;
+  line-height: 1.71;
+  letter-spacing: 0.03em;
+}
+
+/* Расставляем Feature карточки по сетке и задаем ширину */
+.feature-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: calc(-1 * var(--gap));
+  margin-top: calc(-1 * var(--gap));
+}
+
+.feature-item {
+  margin-left: var(--gap);
+  margin-top: var(--gap);
+  flex-basis: calc(100% / 4 - var(--gap));
+}
+
+.feature-icon {
+  margin-bottom: var(--gap);
+  background-color: var(--feature-icon-bg-color);
+  height: 120px;
+  /* выравниваем иконку по центру */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ===================== Section Команда ==================== */
+.section-team {
+  background-color: var(--team-bg-color);
+  /* padding-top: 94px;
+  padding-bottom: 94px; */
+}
+
+.team-title {
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+/* Карточка Команда */
+/* делаем тень на каждую карточку Team */
+.team-card-content {
+  padding: 30px 32px;
+  box-shadow: 0px 2px 1px 0px #00000033;
+  box-shadow: 0px 1px 1px 0px #00000024;
+  box-shadow: 0px 1px 3px 0px #0000001f;
+}
+
+.team-persona {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.17;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.team-profession {
+  /* font-weight: 400; */
+  font-size: 16px;
+  line-height: 1.17;
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+/* Расставляяем Team карточки по сетке и задаем размер */
+.team-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: calc(-1 * var(--gap));
+  margin-top: calc(-1 * var(--gap));
+}
+
+.team-card {
+  background-color: var(--primary-bg-color);
+  margin-left: var(--gap);
+  margin-top: var(--gap);
+  flex-basis: calc(100% / 4 - var(--gap));
+}
+
+/* .section-team .list-item:not(:last-child) {
+  margin-right: 30px;
+} */
+/* Team Social Links */
+.team-social-list {
+  display: flex;
+  justify-content: space-between;
+  width: 206px;
+}
+
+.team-social-icon {
+  fill: #afb1b8;
+  transition: fill var(--btn-timing) cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.team-social-item-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  transition: background-color var(--btn-timing) cubic-bezier(0.4, 0, 0.2, 1);
+}
+.team-social-item-link:hover, .team-social-item-link:focus {
+  background-color: var(--accent-color);
+}
+.team-social-item-link:hover > .team-social-icon, .team-social-item-link:focus > .team-social-icon {
+  fill: var(--active-button-text-color);
+}
+
+/* ================== Section Клиенты =============== */
+.client-title {
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+.client-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin-left: calc(-1 * var(--gap));
+  margin-top: calc(-1 * var(--gap));
+}
+
+.client-item {
+  margin-left: var(--gap);
+  margin-top: var(--gap);
+  flex-basis: calc(100% / 6 - var(--gap));
+}
+
+.client-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 170px;
+  height: 92px;
+  border: 1px solid var(--client-color);
+  border-radius: 4px;
+  fill: var(--client-color);
+  transition: border var(--btn-timing) cubic-bezier(0.4, 0, 0.2, 1), fill var(--btn-timing) cubic-bezier(0.4, 0, 0.2, 1);
+}
+.client-link:hover, .client-link:focus {
+  border: 1px solid var(--accent-color);
+  fill: var(--accent-color);
+}
+
+/* ===================== Footer ======================*/
+.footer {
+  background-color: var(--footer-bg-color);
+  padding-top: 60px;
+  padding-bottom: 60px;
+  /* margin-right: 0; */
+}
+
+.footer-container {
+  display: flex;
+  align-items: baseline;
+}
+
+.footer-contact {
+  margin-top: 20px;
+}
+
+/* Logo Footer*/
+.footer .logo {
+  color: var(--logo-footer-color);
+  margin-right: 0;
+}
+
+/* Footer Contacts */
+.footer-contact .link {
+  color: var(--hero-text-color);
+  font-style: normal;
+  font-size: 14px;
+  line-height: 1.71;
+  transition: color var(--btn-timing) cubic-bezier(0.4, 0, 0.2, 1);
+}
+.footer-contact .link:hover, .footer-contact .link:focus {
+  color: var(--accent-color);
+}
+
+.footer-contact .link-dark {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.footer-contact .list-item:not(:last-child) {
+  margin-bottom: 9px;
+}
+
+/* Footer Social Links */
+.footer-social {
+  margin-left: 70px;
+}
+
+.footer-social-paragraf {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.17;
+  color: var(--hero-text-color);
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+/* Footer Подпишитесь на рассылку */
+.subscription {
+  margin-left: auto;
+}
+
+.subscription-paragraf {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.17;
+  color: var(--hero-text-color);
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.subscription-form {
+  display: flex;
+}
+
+.subscription-form-input {
+  /* height: 50px; */
+  width: 358px;
+  padding: 16px;
+  border-radius: 4px;
+  background-color: transparent;
+  border: 1px solid #ffffff4d;
+  font-size: 16px;
+  line-height: 1.25;
+  letter-spacing: 0.03em;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* Кнопка "Отправить" */
+.subscription-form-button {
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  padding: 10px 28px;
+  margin-left: 12px;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.88;
+  letter-spacing: 0.06em;
+  color: var(--active-button-text-color);
+  width: 200px;
+  /* height: 50px; */
+  border-radius: 4px;
+  background-color: var(--accent-color);
+  cursor: pointer;
+}
+
+.subscription-icon {
+  fill: var(--active-button-text-color);
+  margin-left: 10px;
+}
+
+/* =================== Section Портфолио =============== */
+/* Portfolio Filter Button */
+.portfolio-filter-button {
+  color: var(--alt-text-color);
+  background-color: var(--passive-button-bg-color);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.63;
+  padding: 6px 22px;
+  transition: color var(--btn-timing) cubic-bezier(0.4, 0, 0.2, 1), background-color var(--btn-timing) cubic-bezier(0.4, 0, 0.2, 1), box-shadow var(--btn-timing) cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.portfolio-filter-button:hover,
+.portfolio-filter-button:focus {
+  color: var(--active-button-text-color);
+  background-color: var(--accent-color);
+  box-shadow: 0px 2px 2px 0px #0000001f;
+  box-shadow: 0px 1px 2px 0px #00000014;
+  box-shadow: 0px 3px 1px 0px #0000001a;
+}
+
+/* Ставим кнопки фильтра Portfolio в ряд */
+.filter-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
+.filter-list-item:not(:last-child) {
+  margin-right: 8px;
+}
+
+/* Portfolio Карточки */
+.project-card-content {
+  padding: 20px 24px;
+  border: 1px solid var(--portfolio-card-border-color);
+  border-top: none;
+}
+
+.project-card-title {
+  font-size: 18px;
+  line-height: 2;
+  letter-spacing: 0.06em;
+  margin-bottom: 4px;
+}
+
+.project-card-text {
+  color: var(--primary-text-color);
+  /* font-weight: 400; */
+  font-size: 16px;
+  line-height: 1.87;
+}
+
+/* Расставляяем Portfolio карточки по сетке и задаем размер */
+.project-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: calc(-1 * var(--gap));
+  margin-top: calc(-1 * var(--gap));
+}
+
+.project-card {
+  margin-left: var(--gap);
+  margin-top: var(--gap);
+  flex-basis: calc(100% / 3 - var(--gap));
+}
+
+/* Ховер на карточку - тень */
+.project-card-link {
+  display: block;
+  transition: box-shadow var(--btn-timing) cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.project-card-link:hover,
+.project-card-link:focus {
+  box-shadow: 0px 4px 4px 0px #00000040;
+}
+
+/* делаем Overlay на карточку */
+.project-card-overlay {
+  font-size: 18px;
+  line-height: 1.56;
+  padding: 63px 24px;
+  color: var(--hero-text-color);
+  background-color: rgba(33, 150, 243, 0.9);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* overflow: auto; */
+  transform: translateY(100%);
+  transition: transform var(--modal-timing) linear;
+}
+
+.project-card-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.project-card-link:hover .project-card-overlay,
+.project-card-link:focus .project-card-overlay {
+  transform: translateY(0%);
+}/*# sourceMappingURL=main.css.map */

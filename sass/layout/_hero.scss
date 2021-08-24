@@ -1,0 +1,53 @@
+/* ================ Section Hero =============== */
+.hero {
+  background-color: var(--hero-bg-color);
+  padding: 200px 0;
+  text-align: center;
+
+  margin-left: auto;
+  margin-right: auto;
+
+  max-width: 1600px;
+  background-image: linear-gradient(
+      to right,
+      rgba(47, 48, 58, 0.4),
+      rgba(47, 48, 58, 0.4)
+    ),
+    url(../images/hero.jpg);
+  background-position: center;
+}
+
+.hero-title {
+  font-weight: 900;
+  font-size: 44px;
+  line-height: 1.36;
+  letter-spacing: 0.06em;
+  color: var(--hero-text-color);
+
+  text-transform: uppercase;
+
+  max-width: 696px;
+  margin: 0 auto 30px;
+}
+
+/* Hero Button */
+.hero-button {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.88;
+  letter-spacing: 0.06em;
+  background-color: var(--accent-color);
+  color: var(--active-button-text-color);
+
+  /* геометрия кнопки HERO */
+  padding: 10px 32px; /* защита от прижимания к границам при переполнении */
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+
+  transition: color var(--btn-timing) cubic-bezier(0.4, 0, 0.2, 1),
+    background-color var(--btn-timing) cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:hover,
+  &:focus {
+    background-color: var(--accent-color-hover-hero-button);
+  }
+}

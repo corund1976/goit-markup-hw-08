@@ -1,0 +1,105 @@
+/* ===================== Footer ======================*/
+.footer {
+  background-color: var(--footer-bg-color);
+  padding-top: 60px;
+  padding-bottom: 60px;
+  /* margin-right: 0; */
+}
+.footer-container {
+  display: flex;
+  align-items: baseline;
+}
+.footer-contact {
+  margin-top: 20px;
+}
+/* Logo Footer*/
+.footer .logo {
+  color: var(--logo-footer-color);
+  margin-right: 0;
+}
+/* Footer Contacts */
+.footer-contact .link {
+  color: var(--hero-text-color);
+  font-style: normal;
+  font-size: 14px;
+  line-height: 1.71;
+  transition: color var(--btn-timing) cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:hover,
+  &:focus {
+    color: var(--accent-color);
+  }
+}
+.footer-contact .link-dark {
+  color: rgba(255, 255, 255, 0.6);
+}
+.footer-contact .list-item:not(:last-child) {
+  margin-bottom: 9px;
+}
+
+/* Footer Social Links */
+.footer-social {
+  margin-left: 70px;
+}
+.footer-social-paragraf {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.17;
+  color: var(--hero-text-color);
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+/* Footer Подпишитесь на рассылку */
+.subscription {
+  margin-left: auto;
+}
+.subscription-paragraf {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.17;
+  color: var(--hero-text-color);
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+.subscription-form {
+  display: flex;
+}
+.subscription-form-input {
+  /* height: 50px; */
+  width: 358px;
+  padding: 16px;
+  border-radius: 4px;
+  background-color: transparent;
+  border: 1px solid #ffffff4d;
+
+  font-size: 16px;
+  line-height: 1.25;
+  letter-spacing: 0.03em;
+
+  color: rgba(255, 255, 255, 0.6);
+}
+/* Кнопка "Отправить" */
+.subscription-form-button {
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  padding: 10px 28px;
+  margin-left: 12px;
+
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.88;
+  letter-spacing: 0.06em;
+  color: var(--active-button-text-color);
+
+  width: 200px;
+  /* height: 50px; */
+  border-radius: 4px;
+  background-color: var(--accent-color);
+  cursor: pointer;
+}
+.subscription-icon {
+  fill: var(--active-button-text-color);
+  margin-left: 10px;
+}

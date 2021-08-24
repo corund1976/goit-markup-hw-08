@@ -1,0 +1,47 @@
+/* ================= Section Opportunity ================ */
+.opportunity-title {
+  margin-bottom: 50px;
+  text-align: center;
+}
+/* Расставляяем Opportunity карточки по сетке и задаем размер */
+.opportunity-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: calc(-1 * var(--gap));
+  margin-top: calc(-1 * var(--gap));
+}
+
+.opportunity-item {
+  margin-left: var(--gap);
+  margin-top: var(--gap);
+  flex-basis: calc(100% / 3 - var(--gap));
+}
+/* .section-opportunity .list-item:not(:last-child) {
+  margin-right: 30px;
+} */
+
+/* Overlay на карточки Opportunity */
+.opportunity-item-overlay {
+  font-size: 14px;
+  /* font-weight: 700; */
+  line-height: 1.17;
+  color: var(--hero-text-color);
+  background-color: rgba(47, 48, 58, 0.8);
+
+  text-transform: uppercase;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  overflow: auto;
+}
+
+.opportunity-item-wrapper {
+  position: relative;
+}

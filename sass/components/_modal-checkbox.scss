@@ -1,0 +1,32 @@
+.modal-form-checkbox-label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  margin-bottom: 30px;
+
+  /* Кастомный чекбокс */
+  &::before {
+    content: "";
+    display: block;
+    width: 15px;
+    height: 15px;
+    border: 1px solid var(--primary-text-color);
+    cursor: pointer;
+    margin-right: 10px;
+  }
+
+  /* Убираем рамку чекбокса от браузера по умолчанию и рисуем
+  свой чекбокс, который уже сразу с фоном и новой рамкой */
+  .modal-form-checkbox:checked + &::before {
+    background-image: url(../images/icon_check.svg);
+    border: none;
+    /* Всегда ставить при Фоновом изображении сл.3 св-ва */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}
+.modal-form-checkbox-link {
+  color: var(--accent-color);
+}

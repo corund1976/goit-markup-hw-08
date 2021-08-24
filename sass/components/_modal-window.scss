@@ -1,0 +1,39 @@
+/* Модальное окно для кнопки "Заказать услугу" */
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 528px;
+  height: 581px;
+  padding: 40px;
+  background-color: var(--primary-bg-color);
+  border-radius: 4px;
+}
+/* Кнопка Х закрытия модального окна */
+.close-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 30px;
+  height: 30px;
+  /* круглая рамка вокруг Х */
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  background-color: transparent;
+  padding: 0;
+  /* центруем Х в круглой рамке */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+
+  &:hover .close-btn-icon,
+  &:focus .close-btn-icon {
+    fill: var(--accent-color);
+  }
+}
+/* Делаем плавный ховер при наведении на кнопку закрытия */
+.close-btn-icon {
+  transition: fill var(--btn-timing) cubic-bezier(0.4, 0, 0.2, 1);
+}

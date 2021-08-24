@@ -1,0 +1,82 @@
+/* ===================== Section Команда ==================== */
+.section-team {
+  background-color: var(--team-bg-color);
+  /* padding-top: 94px;
+  padding-bottom: 94px; */
+}
+
+.team-title {
+  margin-bottom: 50px;
+  text-align: center;
+}
+/* Карточка Команда */
+/* делаем тень на каждую карточку Team */
+.team-card-content {
+  padding: 30px 32px;
+  box-shadow: 0px 2px 1px 0px #00000033;
+  box-shadow: 0px 1px 1px 0px #00000024;
+  box-shadow: 0px 1px 3px 0px #0000001f;
+}
+
+.team-persona {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.17;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.team-profession {
+  /* font-weight: 400; */
+  font-size: 16px;
+  line-height: 1.17;
+  text-align: center;
+  margin-bottom: 16px;
+}
+/* Расставляяем Team карточки по сетке и задаем размер */
+.team-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: calc(-1 * var(--gap));
+  margin-top: calc(-1 * var(--gap));
+}
+
+.team-card {
+  background-color: var(--primary-bg-color);
+  margin-left: var(--gap);
+  margin-top: var(--gap);
+  flex-basis: calc(100% / 4 - var(--gap));
+}
+/* .section-team .list-item:not(:last-child) {
+  margin-right: 30px;
+} */
+
+/* Team Social Links */
+.team-social-list {
+  display: flex;
+  justify-content: space-between;
+  width: 206px;
+}
+.team-social-icon {
+  fill: #afb1b8;
+  transition: fill var(--btn-timing) cubic-bezier(0.4, 0, 0.2, 1);
+}
+.team-social-item-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  transition: background-color var(--btn-timing) cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:hover,
+  &:focus {
+    background-color: var(--accent-color);
+  }
+
+  &:hover > .team-social-icon,
+  &:focus > .team-social-icon {
+    fill: var(--active-button-text-color);
+  }
+}
