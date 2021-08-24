@@ -1,7 +1,13 @@
 /* ================ Section Hero =============== */
 .hero {
   background-color: var(--hero-bg-color);
-  padding: 200px 0;
+  padding-top: 118px;
+  padding-bottom: 118px;
+  @media screen and (min-width: 1200px) {
+    padding-top: 200px;
+    padding-bottom: 200px;
+  }
+
   text-align: center;
 
   margin-left: auto;
@@ -19,14 +25,22 @@
 
 .hero-title {
   font-weight: 900;
-  font-size: 44px;
-  line-height: 1.36;
+  font-size: 26px;
+  line-height: 1.62;
+  @media screen and (min-width: 1200px) {
+    font-size: 44px;
+    line-height: 1.36;
+  }
+
   letter-spacing: 0.06em;
   color: var(--hero-text-color);
 
   text-transform: uppercase;
+  max-width: 360px;
 
-  max-width: 696px;
+  @media screen and (min-width: 1200px) {
+    max-width: 696px;
+  }
   margin: 0 auto 30px;
 }
 
