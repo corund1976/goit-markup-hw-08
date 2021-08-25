@@ -78,7 +78,12 @@
                     <li class="project-card">
                         <a href="#" class="project-link link">
                             <div class="project-wrapper">
-                                <img src="./images/project1.jpg" alt="Технокряк" width="370">
+                                <picture>
+                                    <source srcset="./images/project1-desktop.jpg" media="(min-width: 1200px)"> 
+                                    <source srcset="./images/project1-tablet.jpg" media="(min-width: 768px)">
+                                    <source srcset="./images/project1-mobile.jpg" media="(min-width: 480px)">
+                                    <img src="#" alt="Технокряк">
+                                </picture>
                                 <p class="project-overlay">Технокряк это современная площадка распространения коронавируса. Компании используют эту платформу для цифрового
                                 шпионажа и атак на защищённые сервера конкурентов</p>
                             </div>
