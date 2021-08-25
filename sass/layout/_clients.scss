@@ -10,14 +10,26 @@
 .client-item {
   margin-left: var(--gap);
   margin-top: var(--gap);
-  flex-basis: calc(100% / 6 - var(--gap));
+  flex-basis: calc(100% / 2 - var(--gap));
+  @media screen and (min-width: 768px) {
+    flex-basis: calc(100% / 3 - var(--gap));
+  }
+  @media screen and (min-width: 1200px) {
+    flex-basis: calc(100% / 6 - var(--gap));
+  }
 }
 .client-link {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 170px;
+  width: 210px;
   height: 92px;
+  @media screen and (min-width: 768px) {
+    width: 226px;
+  }
+  @media screen and (min-width: 1200px) {
+    width: 170px;
+  }
   border: 1px solid var(--client-color);
   border-radius: 4px;
   fill: var(--client-color);
