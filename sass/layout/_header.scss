@@ -6,7 +6,10 @@
 /* выстраиваем в ряд "Nav" навигацию (лого+нав) и "contacts" контакты в шапке */
 .header .container {
   display: flex;
-  align-items: center;
+  justify-content: space-between;
+  @media screen and (min-width: 768px) {
+    align-items: center;
+  }
 }
 /* выстраиваем в ряд "Logo" лого и "navigation" меню навигации */
 .nav {
@@ -15,26 +18,47 @@
 }
 /* выстраиваем в ряд элементы "navigation" меню навигации: "Студия", "Портфолио" и "Контакты" */
 .navigation {
+  @media screen and (max-width: 767px) {
+    display: none;
+  }
   display: flex;
   align-items: center;
 }
 /* отодвигаем от "Logo" лого вправо "navigation" меню навигации */
-.logo {
-  margin-right: 93px;
+.header .logo {
+  margin-right: 0;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  @media screen and (min-width: 768px) {
+    margin-right: 88px;
+    padding: 0;
+  }
+  @media screen and (min-width: 1200px) {
+    margin-right: 93px;
+  }
 }
 /* раздвигаем элементы "navigation" меню навигации */
 .navigation-item:not(:last-child) {
   margin-right: 50px;
 }
 .contacts {
-  /* выстраиваем в ряд элементы "contacts" контакты email и phone*/
-  display: flex;
+  margin-top: -10px;
+  @media screen and (max-width: 767px) {
+    display: none;
+  }
+  @media screen and (min-width: 1200px) {
+    /* выстраиваем в ряд элементы "contacts" контакты email и phone*/
+    display: flex;
+    margin-top: 0;
+  }
   /* отодвигаем контакты "contacts" впрово */
   margin-left: auto;
 }
 /* раздвигаем элементы контакты "contacts" */
 .contacts-item:not(:last-child) {
-  margin-right: 30px;
+  @media screen and (min-width: 1200px) {
+    margin-right: 30px;
+  }
 }
 
 /* Header Navigation */
@@ -76,7 +100,10 @@
 /* Header Contacts */
 .contacts-link {
   font-weight: 500;
-  font-size: 14px;
+  font-size: 12px;
+  @media screen and (min-width: 1200px) {
+    font-size: 14px;
+  }
   line-height: 1.17;
   letter-spacing: 0.02em;
   color: var(--primary-text-color);
@@ -84,6 +111,9 @@
      выравниваем по высоте */
   display: flex;
   align-items: center;
+  @media screen and (max-width: 1199px) {
+    margin-top: 10px;
+  }
   // плавная анимация
   transition: color var(--btn-timing) cubic-bezier(0.4, 0, 0.2, 1);
 
@@ -95,7 +125,9 @@
 
 /* отступ иконки от текста внутри блоков "contacts" и 
    красим иконку в цвет текста*/
+
 .contacts-icon {
   margin-right: 10px;
   fill: currentColor;
 }
+
