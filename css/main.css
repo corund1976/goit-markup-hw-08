@@ -734,6 +734,10 @@ body {
 }
 
 /* ================= Section Opportunity ================ */
+/* Убираю верхний падинг, который отсутствует только в этой секции */
+.opportunity {
+  padding-top: 0;
+}
 @media screen and (max-width: 1199px) {
   .opportunity {
     display: none;
@@ -776,11 +780,6 @@ body {
 }
 
 /* ================ Section Преимущества ================ */
-/* Убираю верхний падинг, который отсутствует только в этой секции */
-.features {
-  padding-bottom: 0;
-}
-
 /* Карточка Преимущества */
 .feature-title {
   font-size: 14px;

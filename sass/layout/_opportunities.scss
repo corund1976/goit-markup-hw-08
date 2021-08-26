@@ -1,5 +1,7 @@
 /* ================= Section Opportunity ================ */
+/* Убираю верхний падинг, который отсутствует только в этой секции */
 .opportunity {
+  padding-top: 0;
   @media screen and (max-width: 1199px) {
     display: none;
   }
