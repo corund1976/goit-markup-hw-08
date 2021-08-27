@@ -28,8 +28,8 @@
   /* Расстояние между элементами в сетке */
   --gap: 30px;
   /* Задержки анимации */
-  --btn-timing: 1250ms;
-  --modal-timing: 1500ms;
+  --btn-timing: 250ms;
+  --modal-timing: 500ms;
   --font-family: "Roboto", sans-serif;
 }
 
@@ -208,7 +208,7 @@ body {
   flex-direction: column;
 }
 
-.close-btn {
+.mobile-close-btn {
   background-color: transparent;
   border: none;
   padding: 0;
@@ -217,8 +217,8 @@ body {
   right: 15px;
 }
 
-.close-btn:hover .close-btn-icon,
-.close-btn:focus .close-btn-icon {
+.mobile-close-btn:hover .close-btn-icon,
+.mobile-close-btn:focus .close-btn-icon {
   fill: var(--accent-color);
 }
 
