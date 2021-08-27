@@ -36,6 +36,11 @@
     flex-basis: calc(100% / 4 - var(--gap));
   }
 }
+.feature-item:not(:last-child) {
+  @media screen and (max-width: 767px) {
+    margin-bottom: var(--gap);
+  }
+}
 .feature-icon {
   margin-bottom: var(--gap);
   background-color: var(--feature-icon-bg-color);

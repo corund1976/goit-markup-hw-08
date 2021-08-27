@@ -89,23 +89,32 @@
   }
 }
 
-/* Ховер на карточку - тень */
+// Чтобы сделать карточки одинаковыми по высоте:
+// 1. Задаем ссылке, которая оборачивает всю карточку и находится внутри li, display: flex и flex-direction: column.
+// 2. Задаем div с контентом, который  содержит заголовок проекта и абзац с описанием типа, высоту height: 100% .
+// 3. И всей ссылке с флексом тоже задаем высоту height: 100%.
+// 4. div, который содержит картинку, задать flex-shrink: 0.
+
+// Т.о. мы сделали из этой карточки флекс из двух блоков:
+// верхний - с картинкой, а нижний - с контентом.
+// Растянули ссылку на 100% родителя, т.е. li
+
+/* делаем Тень при ховере на карточку */
 .project-link {
   display: flex;
   flex-direction: column;
   transition: box-shadow var(--btn-timing) cubic-bezier(0.4, 0, 0.2, 1);
   height: 100%;
+  &:hover,
+  &:focus {
+    box-shadow: 0px 4px 4px 0px #00000040;
+  }
 }
-.project-link:hover,
-.project-link:focus {
-  box-shadow: 0px 4px 4px 0px #00000040;
-}
-
 /* делаем Overlay на карточку */
 .project-wrapper {
+  flex-shrink: 0;
   position: relative;
   overflow: hidden;
-  flex-shrink: 0;
 }
 .project-overlay {
   font-size: 18px;

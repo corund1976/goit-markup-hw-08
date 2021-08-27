@@ -231,14 +231,21 @@ body {
   margin-bottom: 32px;
 }
 
-.mobile-menu__link {
+.mobile-menu__link,
+.mobile-menu__link-current {
   font-weight: 500;
   font-size: 40px;
   line-height: 1.175;
   letter-spacing: 0.02em;
   color: var(--alt-text-color);
 }
-.mobile-menu__link:hover, .mobile-menu__link:focus {
+.mobile-menu__link:hover, .mobile-menu__link:focus,
+.mobile-menu__link-current:hover,
+.mobile-menu__link-current:focus {
+  color: var(--accent-color);
+}
+
+.mobile-menu__link-current {
   color: var(--accent-color);
 }
 
@@ -276,15 +283,28 @@ body {
 }
 
 .mobile-social-item:not(:last-child) {
-  margin-right: 10px;
+  margin-right: 20px;
+  position: relative;
 }
 
-.mobile-social-link {
+.mobile-social-link,
+.mobile-social-link-last {
   font-weight: 500;
   font-size: 18px;
   line-height: 1.22;
   letter-spacing: 0.02em;
   color: var(--accent-color);
+}
+
+.mobile-social-link::after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 0;
+  right: -10px;
+  width: 1px;
+  height: 100%;
+  background-color: rgba(33, 33, 33, 0.2);
 }
 
 /* Backdrop задний фон для Модального окна*/
@@ -828,6 +848,12 @@ body {
   }
 }
 
+@media screen and (max-width: 767px) {
+  .feature-item:not(:last-child) {
+    margin-bottom: var(--gap);
+  }
+}
+
 .feature-icon {
   margin-bottom: var(--gap);
   background-color: var(--feature-icon-bg-color);
@@ -861,6 +887,12 @@ body {
 @media screen and (min-width: 1200px) {
   .team-card {
     flex-basis: calc(100% / 4 - var(--gap));
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .team-card:not(:last-child) {
+    margin-bottom: var(--gap);
   }
 }
 
@@ -1145,7 +1177,8 @@ body {
 }
 @media screen and (max-width: 1199px) {
   .subscription-form-input {
-    width: 450px;
+    width: 100%;
+    max-width: 450px;
   }
 }
 @media screen and (min-width: 1200px) {
@@ -1279,24 +1312,22 @@ body {
   }
 }
 
-/* Ховер на карточку - тень */
+/* делаем Тень при ховере на карточку */
 .project-link {
   display: flex;
   flex-direction: column;
   transition: box-shadow var(--btn-timing) cubic-bezier(0.4, 0, 0.2, 1);
   height: 100%;
 }
-
-.project-link:hover,
-.project-link:focus {
+.project-link:hover, .project-link:focus {
   box-shadow: 0px 4px 4px 0px #00000040;
 }
 
 /* делаем Overlay на карточку */
 .project-wrapper {
+  flex-shrink: 0;
   position: relative;
   overflow: hidden;
-  flex-shrink: 0;
 }
 
 .project-overlay {

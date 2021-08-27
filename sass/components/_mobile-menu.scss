@@ -79,16 +79,21 @@
 .mobile-menu__item:not(:last-child) {
   margin-bottom: 32px;
 }
-.mobile-menu__link {
+.mobile-menu__link,
+.mobile-menu__link-current {
   font-weight: 500;
   font-size: 40px;
   line-height: 1.175;
   letter-spacing: 0.02em;
   color: var(--alt-text-color);
+
   &:hover,
   &:focus {
     color: var(--accent-color);
   }
+}
+.mobile-menu__link-current {
+  color: var(--accent-color);
 }
 
 // Навигация Телефон и Email
@@ -127,12 +132,27 @@
   display: flex;
 }
 .mobile-social-item:not(:last-child) {
-  margin-right: 10px;
+  margin-right: 20px;
+  position: relative;
 }
-.mobile-social-link {
+.mobile-social-link,
+.mobile-social-link-last {
   font-weight: 500;
   font-size: 18px;
   line-height: 1.22;
   letter-spacing: 0.02em;
   color: var(--accent-color);
+}
+.mobile-social-link::after {
+  content: "";
+  display: block;
+
+  position: absolute;
+  bottom: 0;
+  right: -10px;
+
+  width: 1px;
+  height: 100%;
+
+  background-color: rgba(33, 33, 33, 0.2);
 }
