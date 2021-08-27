@@ -271,8 +271,13 @@ body {
   margin-bottom: 32px;
 }
 .mobile-contacts-item:not(:last-child) .mobile-contacts-link {
-  font-size: 34px;
+  font-size: 26px;
   color: var(--accent-color);
+}
+@media screen and (min-width: 480px) {
+  .mobile-contacts-item:not(:last-child) .mobile-contacts-link {
+    font-size: 34px;
+  }
 }
 
 .mobile-contacts {
@@ -292,10 +297,16 @@ body {
 .mobile-social-link,
 .mobile-social-link-last {
   font-weight: 500;
-  font-size: 18px;
+  font-size: 10px;
   line-height: 1.22;
   letter-spacing: 0.02em;
   color: var(--accent-color);
+}
+@media screen and (min-width: 480px) {
+  .mobile-social-link,
+.mobile-social-link-last {
+    font-size: 18px;
+  }
 }
 
 .mobile-social-link::after {
