@@ -201,7 +201,8 @@ body {
 
 .mobile-menu__container {
   position: relative;
-  width: 480px;
+  width: 100%;
+  max-width: 480px;
   height: 100%;
   padding: 48px 40px;
   margin: 0 auto;
@@ -280,6 +281,7 @@ body {
 
 .mobile-social {
   display: flex;
+  flex-wrap: wrap;
 }
 
 .mobile-social-item:not(:last-child) {

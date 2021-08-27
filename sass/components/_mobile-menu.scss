@@ -46,7 +46,10 @@
 
 .mobile-menu__container {
   position: relative;
-  width: 480px;
+  // width: 480px;
+  // заменил чтобы меню сжималось при ширине меньше 480
+  width: 100%;
+  max-width: 480px;
   height: 100%;
 
   padding: 48px 40px;
@@ -130,6 +133,8 @@
 // Меню соцсети
 .mobile-social {
   display: flex;
+  // добавил чтоб переносилось на след.строку при сжимании по ширине страницы
+  flex-wrap: wrap;
 }
 .mobile-social-item:not(:last-child) {
   margin-right: 20px;
