@@ -22,6 +22,7 @@
   position: fixed;
   top: 0;
   left: 0;
+  z-index: 1;
 
   width: 100vw;
   height: 100vh;
@@ -45,12 +46,16 @@
 
 .mobile-menu__container {
   position: relative;
+  width: 480px;
+  height: 100%;
 
   padding: 48px 40px;
   margin: 0 auto;
 
   display: flex;
   flex-direction: column;
+  // align-items: flex-end;
+  // justify-content: space-between;
 }
 
 // Кнопка закрытия мобильного меню
